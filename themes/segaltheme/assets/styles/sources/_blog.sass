@@ -1,0 +1,29 @@
+
+/*
+ * File : Blog Archivo
+ * Contiene : Todos lo estilos relacionados 
+ * a la sección / página - Blog
+ */
+
+//Preview de Post
+.PreviewPost
+	margin : 0 auto 70px
+
+	//title
+	h3 
+		font-family: "Helvetica57"
+		font-size  : 20px
+		font-weight: 700
+
+	//Párrafos
+	p 
+		font-size : 15px
+
+	//Imágenes
+	figure 
+		overflow : hidden 
+		img 
+			+transition( all 600ms ease-in )
+		&:hover 
+			img 
+				+scale(1.1)

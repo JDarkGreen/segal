@@ -1,0 +1,64 @@
+
+/*
+ * File : Footer Archivo
+ * Contiene : Todos lo estilos relacionados 
+ * a la sección / página - Footer
+ */
+
+#mainFooter
+	background     : url('../images/backgrounds/fondo_footer.jpg') no-repeat
+	background-size: cover 
+	border-top     : 3px solid #FF385E
+	box-sizing     : border-box
+	min-height     : 92px
+	padding        : 25px 0 
+
+/*
+ * MENU LISTA 
+ */
+#menu-list-footer
+	color          : rgba(255,255,255,.9)
+	font-family    : 'Helvetica57'
+	font-size      : 16px 
+	line-height    : 1em
+	list-style-type: none 
+	margin         : 0 0 15px
+	padding        : 0
+	li 
+		border-left: 2px solid
+		display    : inline-block 
+		line-height: 1em 
+		padding    : 0 8px 
+
+		&:first-child 
+			border-left : none 
+
+/*
+ * Menu Footer Redes Sociales
+ */
+#menu-social-footer 
+	list-style-type: none 
+	margin         : 0
+	padding        : 0 
+	li 
+		display: inline-block
+		padding: 0 7px  
+		a 
+			color    : white 
+			display  : block 
+			font-size: 20px 
+			height   : 20px 
+			width    : 20px 
+			i 	
+				+transition(all 500ms ease)
+			//hover
+			&:hover 
+				i 
+					+rotateY(360deg)
+
+/*
+ * Copyright
+ */
+#copyright
+	color    : rgba(255,255,255,.9)
+	font-size: 13px 

@@ -1,0 +1,77 @@
+
+/*
+ * File : Home Archivo
+ * Contiene : Todos lo estilos relacionados 
+ * a la sección / página - HOME
+ */
+
+/*
+ * HOME SLIDER
+ */
+#carousel-home
+	//Texto de Slider 
+	.contentTextSlider
+		background : rgba(0,0,0,.3)
+		color      : #fff
+		font-family: "Helvetica57"
+		height     : 100%
+		max-width  : 500px
+		overflow   : hidden
+		padding    : 6%
+		position   : absolute
+		right      : 0
+		width      : 100%
+		z-index    : 999
+
+		h1 , h2 , h3 , h4
+			font-size: 28px
+			margin   : 0 auto 30px
+
+		p
+			font-size  : 24px
+			line-height: 1.3em
+			margin     : 0
+
+	.tparrows
+		background: rgba(255,255,255,.7)
+		height    : 55px
+		padding   : 8px 0
+		width     : 32px 
+		//before
+		&:before 
+			color    : black 
+			font-size: 20px
+
+//Btn Slider Home
+#btn-slider-home
+	background     : #0031E0
+	color          : white 
+	display        : inline-block 
+	font-family    : 'Helvetica57'
+	font-size      : 16px !important
+	line-height    : 1em 
+	margin         : 27px 0 0 0
+	max-width      : 130px
+	padding        : 15px 14px
+	text-decoration: none 
+	width          : 100%
+	+border-radius( 6px )
+
+/*
+ * SECTION MISCELANEO
+ */
+
+#sectionMiscelaneo
+	background     : url('../images/backgrounds/fondo_miscelaneo.jpg') repeat
+	background-size: cover
+	height         : 335px 
+	overflow       : hidden 
+	padding        : 39px 0
+
+	.itemMiscelaneo
+		margin: 0 46px 0 0
+		width : calc(100%/2 - 23px)
+
+		//Segundos y ultimos elementos 
+		&:nth-child(2n) , &:last-child 
+			margin-right : 0 !important

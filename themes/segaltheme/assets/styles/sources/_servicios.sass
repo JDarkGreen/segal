@@ -1,0 +1,46 @@
+
+/*
+ * File : Servicios Archivo
+ * Contiene : Todos lo estilos relacionados 
+ * a la sección / página - Servicios 
+ */
+
+/* Sección Servicios */
+#pageInicioServices
+	background: white
+	padding   : 53px 0
+
+/* Items de Carousel de servicio */
+.itemServicePreview
+	border       : 1px solid #efefef
+	display      : inline-block
+	margin-bottom: 2%
+	min-height   : 250px
+	padding      : 20px
+
+	//Imagen
+	figure.featured-image
+		margin    : 0 auto 27px
+		max-height: 168px
+		overflow  : hidden
+		img 
+			+transition( all 900ms ease )
+
+		//Hover 
+		&:hover 
+			img 
+				+opacity( .8 )
+				+scale( 1.2  )
+
+	//Texto
+	.container-text
+		//Título
+		h2 
+			font-size  : 22px
+			font-weight: 600
+		//Extracto
+		p 
+			font-size: 15px
+			height   : 87px
+			margin   : 0 auto 30px
+			overflow : hidden 
