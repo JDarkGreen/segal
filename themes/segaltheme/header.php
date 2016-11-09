@@ -45,8 +45,8 @@
 	<![endif]-->
 
 	<!-- Favicon and Apple Icons -->
-	<link rel="shortcut icon" href="" type="image/x-icon" />
-	<link rel="icon" href="" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?= IMAGES ?>/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="<?= IMAGES ?>/favicon.ico" type="image/x-icon" />
 
 	<?php wp_head(); ?>
 </head>
