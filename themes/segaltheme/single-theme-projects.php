@@ -40,6 +40,9 @@ if(stream_resolve_include_path($path_banner)) include($path_banner); ?>
 
 			<div class="col-xs-12 col-sm-6">
 				<?= get_the_post_thumbnail( $post->ID , 'full' , array('class'=>'img-fluid m-x-auto d-block') ); ?>
+				
+				<!-- Espacio en mobile --> <br class="hidden-sm-up" />
+
 			</div> <!-- /.col-xs-12 col-sm-6 -->
 			
 			<!-- Contenido o Información de Página -->

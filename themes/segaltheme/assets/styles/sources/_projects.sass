@@ -14,7 +14,9 @@
  * Item Preview de Projecto
  */
 .itemProjectPreview
-	border : 1px solid #EFEFEF
+	border: 1px solid #EFEFEF
+	width : 100%
+
 	.featured-image
 		height  : 275px
 		overflow: hidden
@@ -39,8 +41,8 @@
 .itemProjectPreview--box
 	box-sizing: border-box
 	margin    : 0 10px 25px 0
+	max-width : calc( 100%/4 - (3*10px) / 4 )
 	min-height: 353px
-	width     : calc( (100%/4) - ( (3*10px) / 4) )
 
 	//Tercer y ultimos elementos
 	&:last-child , &:nth-child(4n)
