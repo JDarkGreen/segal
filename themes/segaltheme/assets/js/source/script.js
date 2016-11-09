@@ -17,9 +17,18 @@ function HomeCarousel()
 			delay           : 9000,
 			minHeight       : 280, 
 			disable_onmobile: 'off',
+			responsiveLevels: [1343, 1024, 778, 480],
 			gridwidth       : [1343, 1024, 778, 480],
 			gridheight      : [420, 420, 400, 400],
 			navigation      : {
+				onHoverStop: "off",
+				touch:{
+					drag_block_vertical: false,
+					swipe_direction    : "vertical",
+					swipe_min_touches  : 1,
+					swipe_treshold     : 60,
+					touchenabled       : "on",
+	            },
 				arrows : { 
 					enable      : true ,  
 					hide_onleave: false, 
@@ -180,7 +189,7 @@ function sendDataFormularybyAjax( formulario )
 			name    : j("#input_name").val(),
 			email   : j("#input_email").val(),
 			phone   : j("#input_phone").val(),
-			subject : j("#input_subject").val(),
+			address : j("#input_address").val(),
 			message : j("#input_message").val(),
 			
 		},function(data){
@@ -196,7 +205,7 @@ function sendDataFormularybyAjax( formulario )
 				j("#input_name").val("");
 				j("#input_email").val("");
 				j("#input_phone").val("");
-				j("input_subject").val("");
+				j("#input_address").val("");
 				j("#input_message").val("");
 				
 				window.location.reload(false);

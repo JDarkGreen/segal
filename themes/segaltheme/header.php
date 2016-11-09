@@ -56,18 +56,27 @@
 <!-- Contenedor Wrapper -->
 <div id="st-container" class="st-container">
 
+	<!-- Contenido Sidebar Categoría Blog Mobile  -->
+	<div class="st-menu st-effect-13" id="sidebar-category">
+		<?php  
+		//Incluir path de menu mobile
+		if(stream_resolve_include_path('partials/sidebar/categories-post.php'))
+			include('partials/sidebar/categories-post.php'); ?>
+	</div>
+
+
 	<!-- Content push wrapper -->
 	<div class="st-pusher">
 
-		<!-- sidebar content -->
+		<!-- Contenido Sidebar Menu Mobile  -->
 		<div class="st-menu st-effect-14" id="menu-14">
 			<?php  
 			//Incluir path de menu mobile
 			if(stream_resolve_include_path('partials/header/main-nav-mobile.php'))
 				include('partials/header/main-nav-mobile.php'); ?>
-		</div>
+		</div> <!-- / -->
 
-
+		<!-- St Content -->
 		<div class="st-content"><!-- this is the wrapper for the content -->
 
 			<!-- Header Principal -->
@@ -117,7 +126,7 @@
 
 						<div class="col-xs-5">
 							
-							<button id="menu-mobile" class="js-sidebar-effects" data-effect="st-effect-14">
+							<button id="" class="menu-mobile js-sidebar-effects" data-effect="st-effect-14">
 								<i class="fa fa-bars" aria-hidden="true"></i>
 								<?= __( 'Menú' , LANG ); ?>
 							</button> <!-- #btn-menu-mobile -->

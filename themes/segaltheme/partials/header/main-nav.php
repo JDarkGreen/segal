@@ -8,7 +8,7 @@
  * Todas las funciones se encuentran en functions/custom-functions.php
  */ ?>
 
-<nav id="mainNav" class="mainNavigation text-uppercase">
+<nav id="mainNav" class="mainNavigation text-uppercase hidden-xs-down">
 	
 	<!-- Contenedor Layout -->
 	<div class="wrapperLayoutPage">

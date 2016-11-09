@@ -37,13 +37,14 @@ $page_link = !empty($page_project) ? get_permalink($page_project->ID) : '#';   ?
 					
 					<!-- Imagen -->
 					<?php  
-					$feat_img = wp_get_attachment_url( get_post_thumbnail_id( $project->ID ) );
+					$image_url = has_post_thumbnail($project->ID) ? wp_get_attachment_url( get_post_thumbnail_id($project->ID) ) : IMAGES . '/default-post.jpg';
+
 					$alt_img  = get_post_meta( get_post_thumbnail_id( $project->ID ) , '_wp_attachment_image_alt' , true );
 					$alt_img  = !empty($alt_img) ? $alt_img : $project->post_name; ?>
 
 					<figure class="featured-image">
 						<a href="<?= get_permalink( $project->ID ); ?>" title="<?= $project->post_title; ?>">
-							<img src="<?= $feat_img; ?>" alt="<?= $alt_img; ?>" class="img-fluid d-block m-x-auto" />
+							<img src="<?= $image_url; ?>" alt="<?= $alt_img; ?>" class="img-fluid d-block m-x-auto" />
 						</a> <!-- / -->
 					</figure>
 

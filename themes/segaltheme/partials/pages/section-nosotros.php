@@ -36,7 +36,7 @@ $image_alt = has_post_thumbnail($page_nosotros->ID) ? get_post_meta( get_post_th
 	<!-- Wrapper de Contenido / Contenedor Layout -->
 	<div class="wrapperLayoutPage relative">
 		
-		<div class="row flexible">
+		<div class="row flexible flexible-wrap">
 			
 			<!-- Apertura -->
 			<div class="col-xs-12 col-sm-3">

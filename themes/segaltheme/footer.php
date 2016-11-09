@@ -33,7 +33,7 @@ $options = get_option('theme_settings'); ?>
 			</div> <!-- /.col-xs-12 col-sm-4 -->
 						
 			<!-- Item -->
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12 col-sm-4 text-xs-center text-sm-left">
 
 				<div class="item-footer">
 	
@@ -50,7 +50,7 @@ $options = get_option('theme_settings'); ?>
 			</div> <!-- /.col-xs-12 col-sm-4 -->
 
 			<!-- Item -->
-			<div class="col-xs-12 col-sm-4">
+			<div class="col-xs-12 col-sm-4 text-xs-center text-sm-left">
 				
 				<!-- Título -->
 				<h2 class="title-footer text-uppercase"> 

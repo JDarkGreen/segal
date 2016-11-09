@@ -5,7 +5,7 @@
 	$options = get_option("theme_settings");
 
 	#Email soportado
-	$admin_email = isset($options['theme_email_text']) && !empty($options['theme_email_text']) ? $options['theme_email_text'] : 'ventas@kayrel.com.pe';
+	$admin_email = isset($options['theme_email_text']) && !empty($options['theme_email_text']) ? $options['theme_email_text'] : 'informes@segalconstruccion.com';
 	
 	
 	//Obtenemos las valores enviados

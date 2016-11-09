@@ -11,19 +11,19 @@
 
 <?php  
 	//Varibles colores de plantila - en hexadecimal
-	$bg_header     = "#151515";
+	$bg_header     = "#002EE0";
 	$bg_body       = "#ffffff";
-	$bg_footer     = "#FF385E";
+	$bg_footer     = "#48679C";
 	$bg_ingenioart = "#0074BB";
 	
-	$name_empresa  = "Kayrel Calzados: Web";
-	$link_web      = "http://iuigv.com/kayrel/web/";
-	$url_image     = "http://iuigv.com/kayrel/web/wp-content/themes/kayrel-theme/assets/images/logo.png";
+	$name_empresa  = utf8_decode( "Segal Construcción: Web" );
+	$link_web      = "http://iuigv.com/segal/";
+	$url_image     = "http://iuigv.com/segal/wp-content/themes/segaltheme/assets/images/logo.png";
 
 	//Tamaño Imágen
-	$w_image = "150";
+	$w_image = "162";
 	//Altura Imágen
-	$h_image = "49";
+	$h_image = "66";
 ?>
 
 

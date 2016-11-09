@@ -30,7 +30,7 @@ function get_banner_page( $page_id )
 		
 		return get_post_meta( $page_id , 'mb_featured_banner' , true );
 	else:
-		return 'https://unsplash.it/1920/314';
+		return 'http://placehold.it/1920x314';
 	endif;
 }
 

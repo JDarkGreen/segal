@@ -15,12 +15,16 @@
 
 <hr/>
 
+<nav id="mainNavMobile">
+	
 <?php
 
+//Menú Lateral Izquierdo
 wp_nav_menu(
-	array(
-	'menu_class'     => 'main-menu',
-	'theme_location' => 'main-menu',
-	'link_before' => '',
-	'link_after' => '',
-)); ?>
+	array( 'menu_class'  => 'left-menu', 'theme_location' => 'left-menu' )); 
+
+//Menú Lateral Derecho
+wp_nav_menu(
+	array( 'menu_class'  => 'right-menu', 'theme_location' => 'right-menu' )); ?>
+
+</nav> <!-- /navMobile -->

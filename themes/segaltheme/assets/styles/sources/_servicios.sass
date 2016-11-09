@@ -49,10 +49,11 @@
 .itemServicePreview--box
 	box-sizing: border-box
 	margin    : 0 23px 50px 0
+	max-width : calc( (100%/3) - ( (2*23px) / 3) )
 	min-height: 425px
 	padding   : 19px 20px
-	width     : calc( (100%/3) - ( (2*23px) / 3) )
-
+	width     : 100%
+	
 	//Tercer y ultimos elementos
 	&:last-child , &:nth-child(3n)
 		margin-right : 0 !important
@@ -76,10 +77,8 @@
 		color      : #898989
 		font-family: "Montserrat" , sans-serif
 		font-size  : 14px
+		margin     : 0 auto 
 		max-width  : 490px
 		padding    : 50px 0 0
-		position   : absolute
-		right      : 6%
-		top        : 0
 		width      : 100%
 	

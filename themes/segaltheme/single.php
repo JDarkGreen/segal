@@ -30,10 +30,19 @@ if(stream_resolve_include_path($path_banner)) include($path_banner); ?>
 <!-- Layout de Página -->
 <main class="pageContentLayout">
 
-	<!-- Espacios --> <br /><br />
-
 	<!-- Wrapper de Contenido -->
 	<div class="wrapperLayoutPage">
+
+		<!-- Menú Mobile only -->
+		<div class="hidden-sm-up">
+	
+			<button id="" class="menu-mobile js-sidebar-effects" data-effect="st-effect-13"> <i class="fa fa-bars" aria-hidden="true"></i> 
+				<?= __( 'Categorías de Blog' , LANG ); ?>
+			</button> <!-- #btn-menu-mobile -->
+
+			<br />
+			
+		</div> <!-- /.hidden-sm-up -->
 		
 		<div class="row">
 			
@@ -64,7 +73,7 @@ if(stream_resolve_include_path($path_banner)) include($path_banner); ?>
 			</div> <!-- /.col-xs-12.col-sm-8 -->	
 
 			<!--  -->		
-			<aside class="col-xs-12 col-sm-4">
+			<aside class="hidden-xs-down col-sm-4">
 
 				<?php 
 				/*
@@ -74,7 +83,7 @@ if(stream_resolve_include_path($path_banner)) include($path_banner); ?>
 				if(stream_resolve_include_path($path_cats_post))
 				include($path_cats_post);  ?>
 				
-			</aside> <!-- /.col-xs-12.col-sm-4 -->
+			</aside> <!-- /.hidden-xs-down.col-sm-4 -->
 
 		</div> <!-- /.row -->
 		

@@ -126,4 +126,12 @@ if( stream_resolve_include_path('functions/support-formats.php') )
  * PERSONALIZACIÓN de Columnas
  *--------------------------------------------*/
 if( stream_resolve_include_path('functions/personalize/new-columns.php') )
-	include('functions/personalize/new-columns.php');
+  include('functions/personalize/new-columns.php');
+
+
+/*--------------------------------------------
+ * PERSONALIZACIÓN de Elemento Padre Activo (Pára los menús y custom post
+ * types )
+ *--------------------------------------------*/
+if( stream_resolve_include_path('functions/personalize/nav-active-parent.php') )
+	include('functions/personalize/nav-active-parent.php');
