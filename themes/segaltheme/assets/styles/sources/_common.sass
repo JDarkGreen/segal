@@ -121,6 +121,10 @@
 		top       : 50%
 		width     : 100%
 
+.titleOfSection--left
+	span 
+		padding : 0 30px 0 0
+
 
 /* 
  *  INDICADORES DE GALERÍA
@@ -141,7 +145,23 @@
  * BANNER DE PÁGINAS Y / O TAXONOMÍAS
  */
 
-//Banner de Página
+//Banner Top de Página
+#section-banner-top
+	h2
+		+text-shadow( 1px 1px 5px black )
+		+translate(-50%,-50%)
+		color      : white
+		font-family: "Montserrat", sans-serif
+		font-size  : 35px
+		font-weight: 700
+		left       : 50%
+		margin     : 0
+		position   : absolute 
+		text-align : center 
+		top        : 50%
+
+
+//Banner de Página a Contacto
 #sectionBannerPage
 	background         : url('../images/backgrounds/consulta_segal_construccion.jpg') no-repeat
 	background-position: bottom center
@@ -231,22 +251,27 @@
 .sectionPagination
 	margin : 20px auto 0
 	a 
-		color          : black 
+		+transition( all 500ms ease )
+		border         : 1px solid gray
+		color          : white 
 		margin         : 0 2px 0 0
 		padding        : 4px 
 		text-decoration: none !important 
-		+transition( all 500ms ease )
 
 		//hover  and active 
 		&:hover , &.active
-			background : #FF385E
+			background : #002EE0
+
+		//Paginator
+		&.arrow-paginator
+			color : gray
 
 		//disabled 
 		&.disabled
-			+opacity(.9)
-			cursor  : none 
-			position: relative 
-			z-index : -9
+			+opacity(.3)
+			cursor        : none 
+			pointer-events: none 
+			position      : relative
 
 /* 
  * COMPARTIR - SECCION SINGLE /PAGE

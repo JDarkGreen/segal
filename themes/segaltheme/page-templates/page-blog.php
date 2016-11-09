@@ -35,7 +35,12 @@ $the_query = new WP_Query( $args );
 
 /*
  * Variable para Template banner de página
- */ ?>
+ */ 
+
+$banner = $post;
+$path_banner = realpath(dirname(dirname(__FILE__)) . '/partials/pages/banner-top-page.php' );
+if(stream_resolve_include_path($path_banner)) include($path_banner); ?>
+
 
 <!-- Layout de Página -->
 <main class="pageContentLayout">
@@ -54,62 +59,46 @@ $the_query = new WP_Query( $args );
 
 				<?php if($the_query->have_posts()): ?>
 
-					<?php while($the_query->have_posts()): $the_query->the_post(); ?>
+					<?php while($the_query->have_posts()): $the_query->the_post(); 
 
-					<article class="PreviewPost">
+					$image_url = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : IMAGES . '/default-post.jpg';
 
-						<div class="row">
-							
-							<!-- imágen -->
-							<div class="col-xs-12 col-sm-4">
-								<figure>
-									<a href="<?= get_the_permalink(); ?>">
+					$image_alt = has_post_thumbnail() ? get_post_meta( get_post_thumbnail_id() , '_wp_attachment_image_alt' , true ) : get_the_title();	?>
 
-									<?php  
-										$url_image = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) ) : IMAGES . '/default-image.jpg'; 
+					<!-- Article Preview -->
+					<article class="PreviewPost PreviewPost--box-page">
 
-										$description = get_post_meta( get_post_thumbnail_id( get_the_ID() ) , '_wp_attachment_image_alt' , true );
-										$description = !empty($description) ? $description: get_the_title(); ?>
-									
-										<img src="<?= $url_image ?>" alt="<?= $description ?>" class="img-fluid d-block m-x-auto" />
+						<!-- Imagen -->
+						<figure class="featured-image">
+							<a href="<?= get_permalink(); ?>" title="<?= get_the_title(); ?>">
+								<img src="<?= $image_url; ?>" alt="<?= $image_alt ?>" class="img-fluid m-x-auto d-block" />
+							</a>
+						</figure> <!-- /. -->
 
-									</a>
-								</figure>
-							</div> <!-- /. -->
+						<!-- Título -->
+						<h2> <?= get_the_title(); ?> </h2>
 
-							<!-- contenido -->
-							<div class="col-xs-12 col-sm-8">
-								
-								<!-- Título -->
-								<h3 class="text-uppercase"><?= get_the_title(); ?></h3>
+						<!-- Extracto -->
+						<?php 
+							$limit_words = 35;
 
-								<!-- Extracto -->
-								<p>
-									<?php  
-										$content = wp_strip_all_tags( get_the_content() );
-										#limite palabras
-										$limit_words = 40;
-										#Mostrar palabras
-										echo wp_trim_words( $content , $limit_words , '...' ); ?>
-								</p>
+							$content     = wp_strip_all_tags( get_the_content() );
+							$content     = apply_filters( 'the_content' , $content  );
+							$content     = array_slice( explode(' ' , $content ) , 0 , $limit_words );
+							$content     = implode( ' ' , $content ) . '...<br/>';
 
-								<?php  
-								/* 
-								 * Incluir Partial Compartir Post
-								 */
-								$path_share_post = realpath( dirname(dirname(__FILE__)) . '/partials/single/shared-post.php' );
-								if( stream_resolve_include_path($path_share_post) )
-								include($path_share_post) ?>
+							echo $content;  ?>
+						
+						<!-- Limpiar floats --> <div class="clearfix"></div>
 
-								<!-- Limpiar floats --> <div class="clearfix"></div>
-
-							</div> <!-- /.col-xs-12 col-sm-8 -->
-
-						</div> <!-- /.row -->
+						<a href="<?= get_permalink(); ?>" class="read-more"> Leer Más </a>
 						
 					</article> <!-- /.PreviewPost -->
 
 					<?php endwhile; ?>
+					
+					<!-- Limpiar Float -->
+					<div class="clearfix"></div>
 					
 					<!-- Paginación aquí -->
 					<section class="sectionPagination text-xs-center">
@@ -124,7 +113,8 @@ $the_query = new WP_Query( $args );
 						<?php } ?>
 						
 						<!-- Next -->
-						<a href="<?= get_pagenum_link($paged+1); ?>" class="<?= $paged == $max_pages ? 'disabled' : '' ?>" role="button" aria-disabled="<?= $paged == $max_pages ? 'true' : '' ?>">
+						<a href="<?= get_pagenum_link($paged+1); ?>" class="arrow-paginator <?= $paged == $max_pages ? 'disabled' : '' ?>" role="button" aria-disabled="<?= $paged == $max_pages ? 'true' : '' ?>" tabindex="<?= $paged == $max_pages ? -1 : '' ?>">
+
 							<!-- Icon --><i class="fa fa-long-arrow-right" aria-hidden="true"></i>
 						</a>
 						

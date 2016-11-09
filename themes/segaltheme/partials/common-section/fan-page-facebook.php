@@ -24,7 +24,7 @@ $bg_facebook = IMAGES . '/backgrounds/bg_facebook.png';  ?>
 
 	<?php if( has_facebook() ) : ?>
 
-	<div class="fb-page" data-href="<?= get_facebook() ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="502" data-height="253" data-hide-cover="false" data-show-facepile="true"><blockquote cite="<?= get_facebook() ?>" class="fb-xfbml-parse-ignore"><a href="<?= get_facebook() ?>"> <?= get_bloginfo('name'); ?> </a></blockquote></div>
+	<div class="fb-page" data-href="<?= get_facebook() ?>" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-width="502" data-height="465" data-hide-cover="false" data-show-facepile="true"><blockquote cite="<?= get_facebook() ?>" class="fb-xfbml-parse-ignore"><a href="<?= get_facebook() ?>"> <?= get_bloginfo('name'); ?> </a></blockquote></div>
 	
 	<?php endif; ?>
 

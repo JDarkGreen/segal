@@ -1,51 +1,98 @@
 <?php  
 /*
  * Plantila Miscelaneo Incluye:
- * - Catalogo
+ * - Blog
  * - Facebook
  */
-?>
 
-<section id="sectionMiscelaneo">
-	
-	<!-- Wrapper Layout -->
-	<div class="wrapperLayoutPage">
+//Obtener entradas recientes
+$args = array(
+	'order'          => 'DESC',
+	'orderby'        => 'date',
+	'post_status'    => 'publish',
+	'post_type'      => 'post',
+	'posts_per_page' => 2,  );  
 
-		<div class="flexible flexible-wrap align-items">
-	
-			<!-- Catálogo -->
-			<div class="itemMiscelaneo relative">
-				
-				<?php 
-					//Si Existe Catalogo
-				if( isset($options['theme_meta_brochure']) && !empty($options['theme_meta_brochure']) ) : ?>
+$entradas = get_posts( $args );  ?>
 
-				<a href="<?= $options['theme_meta_brochure']; ?>" target="_blank">
-					<img src="<?= IMAGES ?>/backgrounds/fondo_catalogo.jpg" alt="<?= get_bloginfo('name') ?>" class="img-fluid m-x-auto d-block" />	
-				</a>
 
-				<?php endif; ?>
-				
-			</div> <!-- /.itemMiscelaneo -->
+<section id="pageInicioMiscelaneo">
+
+	<!-- Wrapper de Contenido / Contenedor Layout -->
+	<div class="wrapperLayoutPage relative">
+
+		<div class="row">
 			
-			<!-- Facebook -->
-			<div class="itemMiscelaneo">
+			<div class="col-xs-12 col-sm-8">
 
-				<?php 
-				//Si Existe Facebook
-				if( isset($options['theme_meta_brochure']) && !empty($options['theme_meta_brochure']) ) :
+				<div id="container-article-preview">
+					
+					<!-- Título -->
+					<h2 class="titleOfSection text-capitalize"> 
+					<span> <?= __('blog',LANG) ?> </span> </h2>
 
-					$path_file_fb = realpath( dirname(dirname(__FILE__)) . '/common-section/fan-page-facebook.php' );
+					<?php foreach( $entradas as $entrada  ):
 
-					if( stream_resolve_include_path($path_file_fb) )
-					include($path_file_fb);
+					$image_url = has_post_thumbnail($entrada->ID) ? wp_get_attachment_url( get_post_thumbnail_id($entrada->ID) ) : IMAGES . '/default-post.jpg';
+					$image_alt = has_post_thumbnail($entrada->ID) ? get_post_meta( get_post_thumbnail_id($entrada->ID) , '_wp_attachment_image_alt' , true ) : $entrada->post_name;	?>
 
-				endif; ?>
+					<!-- Article Preview -->
+					<article class="PreviewPost PreviewPost--box">
+
+						<!-- Imagen -->
+						<figure class="featured-image">
+							<a href="<?= get_permalink( $entrada->ID ); ?>" title="<?= $entrada->post_title; ?>">
+								<img src="<?= $image_url; ?>" alt="<?= $image_alt ?>" class="img-fluid m-x-auto d-block" />
+							</a>
+						</figure> <!-- /. -->
+
+						<!-- Título -->
+						<h2> <?= $entrada->post_title; ?> </h2>
+
+						<!-- Extracto -->
+						<?php 
+							$limit_words = 35;
+							
+							$content     = $entrada->post_content;
+							$content     = apply_filters( 'the_content' , $content  );
+							
+							$content     = array_slice( explode(' ' , $content ) , 0 , $limit_words );
+							$content     = implode( ' ' , $content ) . '...<br/>';
+
+							echo $content;
+						?>
+						
+						<!-- Limpiar floats --> <div class="clearfix"></div>
+
+						<a href="<?= get_permalink( $entrada->ID ); ?>" class="read-more"> Leer Más </a>
+						
+					</article> <!-- /.PreviewPost -->
+
+					<?php endforeach; ?>
+
+				</div> <!-- /#container-article-preview -->
+
+			</div> <!-- /.col-xs-12 col-sm-8 -->
+
+			
+			<div class="col-xs-12 col-sm-4">
+
+				<!-- Título -->
+				<h2 class="titleOfSection text-capitalize"> 
+				<span> <?= __('facebook',LANG) ?> </span> </h2>
 				
-			</div> <!-- /.itemMiscelaneo -->	
+				<!-- Facebook  -->
+				<?php 
+				$path_facebook = realpath( dirname(dirname(__FILE__)). '/common-section/fan-page-facebook.php');
+				if(stream_resolve_include_path($path_facebook))
+				include($path_facebook);  ?>
+				
+			</div> <!-- /.col-xs-12 col-sm-4 -->
 
-		</div> <!-- /.flexible align-items -->
-		
-	</div> <!-- /.wrapperLayoutPage -->
+		</div> <!-- /.row -->
+	
+	</div> <!-- /wrapperLayoutPage relative -->
 
-</section> <!-- /.sectionMiscelaneo -->
+	<!-- Espacio --> <br />
+	
+</section> <!-- /.pageInicioBlog -->

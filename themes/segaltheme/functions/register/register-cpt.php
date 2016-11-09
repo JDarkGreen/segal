@@ -31,6 +31,14 @@ function register_custom_post_types()
 		'menu_icon'   => 'dashicons-portfolio',
 	);
 
+	/*Trabajos Realizados*/
+	$arr_cpt['theme-projects'] = array(
+		'plural_name' => 'Trabajos Realizados',
+		'name'        => 'Projecto',
+		'description' => 'Projectos en el tema',
+		'menu_icon'   => 'dashicons-laptop',
+	);
+
 	/*Galería Imágenes*/
 	$arr_cpt['theme-gallery-images'] = array(
 		'plural_name' => 'Galería Imágenes',

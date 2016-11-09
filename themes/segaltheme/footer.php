@@ -10,79 +10,74 @@
  */
 $options = get_option('theme_settings'); ?>
 
-<footer id="mainFooter">
-
-	<!-- Wrapper -->
+<footer id="mainFooter" class="mainFooter">
+		
+	<!-- Wrapper de Contenido / Contenedor Layout -->
 	<div class="wrapperLayoutPage">
 
 		<div class="row">
 			
-			<!-- Item Footer -->
-			<div class="col-xs-12 col-sm-2">
-				
-				<img src="<?= IMAGES ?>/logo.png" alt="<?= get_bloginfo('description') ?>" class="img-fluid m-x-auto" />
+			<!-- Item -->
+			<div class="col-xs-12 col-sm-4">
 
-				<br class="hidden-sm-up" />
+				<!-- Logo -->
+				<h2 id="logo-footer">
+					<img src="<?= IMAGES ?>/logo.png" alt="<?php bloginfo('description'); ?>" class="img-fluid d-block m-x-auto" />
+				</h2> <!-- /.logo -->
+
+				<br/>
+
+				<!-- Texto Presentación -->
+				<?= isset($options['theme_footer_text']) ? apply_filters( 'the_content' , $options['theme_footer_text'] ) : ''; ?>  
 
 			</div> <!-- /.col-xs-12 col-sm-4 -->
-
-			<!-- Item Footer -->
-			<div class="col-xs-12 col-sm-8 text-xs-center">
-				
-				<!-- Menu Footer -->
-				<ul id="menu-list-footer">
-				<?php  
-					//teléfonos
-					for( $i=1 ; $i<=2 ; $i++ ){
-						if( isset( $options['theme_phone_text_'.$i]) && !empty($options['theme_phone_text_'.$i]) ) : ?>
 						
-					<li> <?= $options['theme_phone_text_'.$i] ?> </li>
+			<!-- Item -->
+			<div class="col-xs-12 col-sm-4">
 
-					<?php endif; } 					
+				<div class="item-footer">
+	
+					<!-- Título -->
+					<h2 class="title-footer text-uppercase"> 
+					<?= __("Contacto" , LANG );?> </h2>
 
-					//celulares
-					for( $i=1 ; $i<=2 ; $i++ ){
-						if( isset( $options['theme_cel_text_'.$i]) && !empty($options['theme_cel_text_'.$i]) ) : ?>
-						
-					<li> <?= $options['theme_cel_text_'.$i] ?> </li>
-
-					<?php endif; } 
-
-					//email 
-					if( isset($options['theme_email_text']) && !empty($options['theme_email_text']) ) : ?>
-
-					<li> <?= $options['theme_email_text'] ?> </li>
-
-					<?php endif; ?>	
-
-				</ul> <!-- /#menu-list-footer -->
-
-				<!-- Copyright -->
-				<div id="copyright">
-					Copyright &copy; www.kayrel.com.pe
-				</div> <!-- /#copyright -->
-
-				<br class="hidden-sm-up" />
-				
+					<?php  
+					if(stream_resolve_include_path('partials/footer/section-data.php')) 
+					include('partials/footer/section-data.php'); ?>
+					
+				</div> <!-- /.item-footer -->
+							
 			</div> <!-- /.col-xs-12 col-sm-4 -->
 
-			<div class="col-xs-12 col-sm-2">
+			<!-- Item -->
+			<div class="col-xs-12 col-sm-4">
 				
+				<!-- Título -->
+				<h2 class="title-footer text-uppercase"> 
+				<?= __("Reservas" , LANG );?> </h2>
+
 				<?php  
- 				//Template Redes sociales
- 				$path_social_footer = realpath( dirname(__FILE__) . '/partials/footer/menu-social-footer.php');
+				if(stream_resolve_include_path('partials/footer/menu-social-footer.php')) 
+				include('partials/footer/menu-social-footer.php'); ?>
 
- 				if(stream_resolve_include_path($path_social_footer))
- 					include($path_social_footer); ?>
+				<br/><br/>
 
+				<!-- Texto web -->
+				<div class="text-web"> WWW.SEGALCONSTRUCTORA.COM </div>
+				
 			</div> <!-- /.col-xs-12 col-sm-4 -->
 			
 		</div> <!-- /.row -->
 
-	</div> <!-- /.wrapperLayoutPage -->
-	
-</footer> <!-- /#mainFooter -->
+	</div> <!-- /.wrapperLayoutPage  -->
 
+</footer> <!-- /.#mainFooter -->
+
+<!-- Desarrollo -->
+<div id="section-developer" class="text-xs-center">
+	<?= '&copy; ' . date('Y') . ' SEGALCONSTRUCTORA Derechos reservados Desing by'; ?>
+	<a href="http://www.ingenioart.com/" target="_blank"> INGENIOART</a>
+</div> <!-- /.#section-developer -->
 
 
 </div><!-- /st-content -->

@@ -4,7 +4,7 @@
  * Accion : Incluir redes sociales en el footer
  */  ?>
 
-<ul id="menu-social-footer" class="text-xs-center">
+<ul id="menu-social-footer" class="">
 	
 <?php if( has_facebook() ): ?>
 <!-- Facebook -->

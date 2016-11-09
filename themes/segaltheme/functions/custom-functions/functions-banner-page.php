@@ -1,13 +1,13 @@
 <?php  
-/**
-  * Archivo que incluye funciones personalizadas de 
-  * páginas de wordpress
-  */
+/*
+ * Archivo que incluye funciones personalizadas de 
+ * páginas de wordpress
+ */
 
 
-/**
-* Definir si existe banner de página
-**/
+/*
+ * Definir si existe banner de página
+ */
 function has_banner_page( $page_id )
 {
 	global $options;
@@ -19,9 +19,9 @@ function has_banner_page( $page_id )
 	endif;
 }
 
-/**
-* Conseguir banner de página
-**/
+/*
+ * Conseguir banner de página
+ */
 function get_banner_page( $page_id )
 {
 	global $options;
@@ -33,3 +33,4 @@ function get_banner_page( $page_id )
 		return 'https://unsplash.it/1920/314';
 	endif;
 }
+

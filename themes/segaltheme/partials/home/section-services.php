@@ -27,13 +27,13 @@ $services = get_posts( $args );  ?>
 			
 			<?php if( count($services) > 1 ) : ?>
 
-			<!-- Carousel Galeria -->
+			<!-- Carousel  -->
 			<div id="carousel-single-services" class="section__single_gallery js-carousel-gallery" data-items="3" data-items-responsive="1" data-margins="21" data-dots="false" data-autoplay="true" data-timeautoplay="5000">
 
 				<?php foreach( $services as $service ): ?> 
 
 					<!-- Item preview de servicio -->
-					<article class="itemServicePreview containerRelative">
+					<article class="itemServicePreview relative">
 						
 						<!-- Imagen -->
 						<?php  
@@ -42,7 +42,7 @@ $services = get_posts( $args );  ?>
 						$alt_img  = !empty($alt_img) ? $alt_img : $service->post_name; ?>
 
 						<figure class="featured-image">
-							<a href="<?= get_permalink( $service->ID ); ?>">
+							<a href="<?= get_permalink( $service->ID ); ?>" title="<?= $service->post_title; ?>">
 								<img src="<?= $feat_img; ?>" alt="<?= $alt_img; ?>" class="img-fluid d-block m-x-auto" />
 							</a> <!-- / -->
 						</figure>
