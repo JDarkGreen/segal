@@ -59,8 +59,8 @@
    				<div class="contentTextSlider">
 
             <div class="tp-caption maincaption"
-              data-x="[100,100,30,60]" data-hoffset="0"
-              data-y="[87,100,30,20]" data-voffset="0"
+              data-x="[100,100,30,10]" data-hoffset="0"
+              data-y="[87,100,30,10]" data-voffset="0"
               data-transform_idle="o:1;"
               data-transform_in="y:50px;opacity:0;s:700;e:Power3.easeOut;"
               data-transform_out="y:50px;opacity:0;s:500;e:Power2.easeInOut;
