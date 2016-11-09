@@ -98,11 +98,14 @@ function register_custom_post_types()
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-			'menu_icon'          => $menu_icon
+			'menu_icon'          => $menu_icon,
 		);
+
+		flush_rewrite_rules();
 		
 		//Registrar Custom Post Type
 		register_post_type( $cptype , ${'args_'.$cptype} );
+
 	
 	endforeach;
 

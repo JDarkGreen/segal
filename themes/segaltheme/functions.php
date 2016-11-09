@@ -67,6 +67,12 @@ function remove_admin_bar() {
   add_filter('show_admin_bar', '__return_false');
 }
 
+/*--------------------------------------
+ * Reescribir enlaces de CUSTOM POST TYPES
+ *--------------------------------------*/
+$path_rewrite_cpt = realpath( dirname(__FILE__) . '/admin/rewrite/rewrite_slug.php' );
+if( realpath($path_rewrite_cpt) )
+include($path_rewrite_cpt);
 
 
 /* ---------------------------------------------------

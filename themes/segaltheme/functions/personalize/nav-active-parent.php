@@ -46,7 +46,7 @@ pertenece la pagina actual a un custom post type */
 		}
 		
 		//Si el tipo de post es projectos y está en la página de projectos
-		if( get_post_type( $post_id ) === "theme-projects" && ( strpos( $menu_slug , "trabajos" ) !== false ) )
+		if( get_post_type( $post_id ) === "theme-projects" && ( strpos( $menu_slug , "proyectos" ) !== false ) )
 		{
 			$classes[] = 'current-menu-this-item';
 		}

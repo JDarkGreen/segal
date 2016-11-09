@@ -13,30 +13,24 @@
 	<!-- Contenedor Layout -->
 	<div class="wrapperLayoutPage">
 
-		<div class="row">
-		
-			<!-- Left menu -->
-			<div class="col-sm-5">
-			<?php 
-				wp_nav_menu(
-					array(
-					'menu_class'     => 'left-menu flexible flexible-wrap space-between',
-					'theme_location' => 'left-menu'
-				));
-			?>
-			</div> <!-- /col-sm-5 -->
-
+		<div class="flexible align-items-center">
+	
+			<!-- Left Menu -->
+			<div class="menu-header-item">
+				<?php 
+					wp_nav_menu(
+						array(
+						'menu_class'     => 'left-menu flexible flexible-wrap space-between',
+						'theme_location' => 'left-menu'
+					));
+				?>
+			</div>
+			
 			<!-- Logo -->
-			<div class="col-sm-2">
-				
-				<?php  
-				if(stream_resolve_include_path('main-logo.php'))
-				include('main-logo.php'); ?>
-
-			</div> <!-- /.col-sm-2 -->
+			<?php if(stream_resolve_include_path('main-logo.php')) include('main-logo.php'); ?>
 
 			<!-- Right menu -->
-			<div class="col-sm-5">
+			<div class="menu-header-item">
 			<?php 
 				wp_nav_menu(
 					array(
@@ -44,10 +38,10 @@
 					'theme_location' => 'right-menu'
 				));
 			?>
-			</div> <!-- /col-sm-5 -->
+			</div> <!-- /menu-header-item -->
 			
-		</div> <!-- /.row -->
-
+		</div> <!-- /flexible -->
+		
 	</div> <!-- /.wrapperLayoutPage -->
 	
 </nav> <!-- /.mainNavigation -->

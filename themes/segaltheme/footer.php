@@ -25,8 +25,6 @@ $options = get_option('theme_settings'); ?>
 					<img src="<?= IMAGES ?>/logo.png" alt="<?php bloginfo('description'); ?>" class="img-fluid d-block m-x-auto" />
 				</h2> <!-- /.logo -->
 
-				<br/>
-
 				<!-- Texto Presentación -->
 				<?= isset($options['theme_footer_text']) ? apply_filters( 'the_content' , $options['theme_footer_text'] ) : ''; ?>  
 

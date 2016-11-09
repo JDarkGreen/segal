@@ -82,29 +82,6 @@
 			<!-- Header Principal -->
 			<header id="mainHeader">
 
-				<!-- Barra de Navegación Superior -->
-				<div id="top-bar-header" class="hidden-xs-down">
-
-					<!-- Wrapper -->
-					<div class="wrapperLayoutPage">
-
-						<?php  
-						/*
-						 * Incluir menu de Redes sociales
-						 */
-						if(stream_resolve_include_path('partials/common-section/social-links.php'))
-							include('partials/common-section/social-links.php'); 
-
-						/*
-						 * Incluir partial de Números telefónicos
-						 */
-						if(stream_resolve_include_path('partials/header/section-numbers.php'))
-							include('partials/header/section-numbers.php'); ?>
-						
-					</div> <!-- /.wrapperHeader -->
-					
-				</div> <!-- /.top-bar-header -->
-
 				<?php  
 					/* Incluir Template de Navegación */ 
 				if(stream_resolve_include_path('partials/header/main-nav.php')) 
